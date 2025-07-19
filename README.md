@@ -265,7 +265,8 @@ using namespace std;
 
 int main() {
     stack<int> s;
-    for (char c : "53+82-*")
+    string expr = "53+82-*";
+    for (char c : expr)
         if (isdigit(c)) s.push(c - '0');
         else { int b = s.top(); s.pop(); int a = s.top(); s.pop();
             s.push(c=='+'?a+b:c=='-'?a-b:c=='*'?a*b:a/b);
